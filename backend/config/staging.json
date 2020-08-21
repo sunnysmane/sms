@@ -1,0 +1,48 @@
+{
+  "env": "staging",
+  "server": {
+    "routes": {
+      "cors": true,
+      "timeout": {
+        "server": 1200000,
+        "socket": 1300000
+      }
+    },
+    "port": 50002,
+    "host": "0.0.0.0"
+  },
+  "database": {
+    "mongo": {
+      "type": "mongo",
+      "name": "SMS_BACKEND_MS_STAGING",
+      "host": "0.0.0.0",
+      "port": 27017,
+      "username": "",
+      "password": "",
+      "options": {
+        "host": "0.0.0.0",
+        "port": 27017,
+        "dialect": "mongo",
+        "underscored": true,
+        "timestamps": false,
+        "define": {
+          "underscored": true,
+          "timestamps": false
+        },
+        "pool": {
+          "maxConnections": 20,
+          "minConnections": 5,
+          "maxIdleTime": 30000
+        }
+      }
+    }
+  },
+  "logging": {
+    "name": "SMS_BACKEND_MS_STAGING",
+    "level": "debug",
+    "path": "/tmp/node_debug.log"
+  },
+  "swagger": {
+    "host": "0.0.0.0"
+  }
+}

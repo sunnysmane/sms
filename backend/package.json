@@ -1,0 +1,45 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "backend for city list",
+  "main": "index.js",
+  "scripts": {
+    "test": "nyc --reporter=lcov --reporter=html mocha",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sunnysmane/sms-backend.git"
+  },
+  "author": "Sunny Mane",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sunnysmane/sms-backend/issues"
+  },
+  "homepage": "https://github.com/sunnysmane/sms-backend#readme",
+  "dependencies": {
+    "@hapi/hapi": "^20.0.0",
+    "@hapi/inert": "^6.0.2",
+    "@hapi/joi-date": "^2.0.1",
+    "@hapi/vision": "^6.0.1",
+    "app-module-path": "^2.2.0",
+    "async": "^3.2.0",
+    "bunyan": "^1.8.14",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "config": "^3.3.1",
+    "fs": "0.0.1-security",
+    "hapi": "^18.1.0",
+    "hapi-swagger": "^14.0.0",
+    "joi": "^17.2.0",
+    "lodash": "^4.17.20",
+    "mocha": "^8.1.1",
+    "moment": "^2.27.0",
+    "mongoose": "^5.10.0",
+    "nyc": "^15.1.0",
+    "qs": "^6.9.4"
+  },
+  "devDependencies": {
+    "coveralls": "^3.1.0"
+  }
+}

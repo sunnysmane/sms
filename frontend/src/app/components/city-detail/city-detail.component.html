@@ -1,0 +1,65 @@
+<div class="content-wrapper">
+  <div class="header-wrapper">
+    <table>
+      <tr>
+        <td style="text-align: left"><h2 class="header">{{(isEdit) ? 'City Details' : 'Add City'}}</h2></td>
+<!--        <td style="text-align: end"><button mat-raised-button (click)="addCity()" color="primary">Add City</button></td>-->
+      </tr>
+    </table>
+  </div>
+  <div>
+    <div class="mat-elevation-z2 padding16">
+      <form class="city-form" [formGroup]="cityForm" autocomplete="off" novalidate (ngSubmit)="createCity(cityForm.value)">
+
+        <table class="full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="full-width">
+            <mat-label>City</mat-label>
+            <input matInput placeholder="Pune" formControlName="city">
+            <mat-error *ngIf="hasError('city', 'required')">City is required</mat-error>
+          </mat-form-field></td>
+          <td><mat-form-field class="full-width">
+            <mat-label>Price</mat-label>
+            <input matInput type="number" placeholder="10" formControlName="price">
+            <mat-error *ngIf="hasError('price', 'required')">Price is required</mat-error>
+          </mat-form-field></td>
+        </tr></table>
+
+        <table class="full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="full-width">
+            <mat-label>Start Date</mat-label>
+            <input matInput [matDatepicker]="start_date" formControlName="start_date" id="start_date" placeholder="10/02/2020">
+            <mat-datepicker-toggle matSuffix [for]="start_date"></mat-datepicker-toggle>
+            <mat-datepicker #start_date></mat-datepicker>
+            <mat-error *ngIf="hasError('start_date', 'required')">Start Date is required</mat-error>
+          </mat-form-field></td>
+          <td><mat-form-field class="full-width">
+            <mat-label>End Date</mat-label>
+            <input matInput [matDatepicker]="end_date" formControlName="end_date" id="end_date" placeholder="12/02/2020">
+            <mat-datepicker-toggle matSuffix [for]="end_date"></mat-datepicker-toggle>
+            <mat-datepicker #end_date></mat-datepicker>
+            <mat-error *ngIf="hasError('end_date', 'required')">End Date is required</mat-error>
+          </mat-form-field></td>
+        </tr></table>
+
+        <table class="full-width" cellspacing="0"><tr>
+          <td><mat-form-field class="full-width">
+            <mat-label>Status</mat-label>
+            <input matInput placeholder="Yearly" formControlName="status">
+            <mat-error *ngIf="hasError('status', 'required')">Status is required</mat-error>
+          </mat-form-field></td>
+          <td><mat-form-field class="full-width" id="color-picker-custom">
+            <mat-label>Color</mat-label>
+<!--            <input matInput type="text" placeholder="#F0F0F0" formControlName="color">-->
+            <input [style.color]="checkIfColorBlack(color) ? '#FFFFFF' : '#000000'" matInput [(colorPicker)]="color" [cpPosition]="'bottom-left'" (colorPickerChange)="changeColor($event)" [style.background]="color" formControlName="color">
+            <mat-error *ngIf="hasError('color', 'required')">Color is required</mat-error>
+            <mat-error *ngIf="hasError('color', 'pattern')">Color code should be in hexadecimal. Ex. #F0F0F0</mat-error>
+          </mat-form-field></td>
+        </tr></table>
+        <table class="full-width align-right" cellspacing="0"><tr>
+          <td><button mat-raised-button color="primary" [disabled]="cityForm.invalid">Submit</button></td></tr>
+        </table>
+
+      </form>
+    </div>
+  </div>
+</div>

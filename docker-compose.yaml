@@ -1,0 +1,21 @@
+version: '2'
+
+services:
+  angular:
+    build: frontend
+    ports:
+      - "40000:80"
+    environment:
+      - NODE_ENV=production
+
+  nodejs:
+    build: backend
+    ports:
+      - "50003:50003"
+    environment:
+      - NODE_ENV=production
+
+  database:
+    image: mongo
+    ports:
+      - "27018:27017"

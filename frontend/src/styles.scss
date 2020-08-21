@@ -1,0 +1,108 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+$NotoSansJPLightFont : './assets/fonts/NotoSansJP-Bold.otf';
+$NotoSansJPRegularFont : './assets/fonts/NotoSansJP-Regular.otf';
+$NotoSansJPMediumFont : './assets/fonts/NotoSansJP-Medium.otf';
+$NotoSansJPBoldFont : './assets/fonts/NotoSansJP-Bold.otf';
+$MaterialIcon : './assets/fonts/material-icon.woff2';
+
+@font-face {
+  font-family: NotoSansJPLight;
+  font-style: normal;
+  src: url($NotoSansJPLightFont);
+}
+
+@font-face {
+  font-family: NotoSansJPRegular;
+  font-style: normal;
+  src: url($NotoSansJPRegularFont);
+}
+
+@font-face {
+  font-family: NotoSansJPMedium;
+  font-style: normal;
+  src: url($NotoSansJPMediumFont);
+}
+
+@font-face {
+  font-family: NotoSansJPBold;
+  font-style: normal;
+  src: url($NotoSansJPBoldFont);
+}
+
+@font-face {
+  font-family: 'Material-Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url($MaterialIcon) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material-Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body { height: 100%; margin: 0; padding: 0; }
+body { margin: 0; font-family: NotoSansJPRegular!important; }
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #929292;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.padding16 {
+  padding: 16px;
+}
+
+.city-table table tbody tr {
+  cursor: pointer;
+}
+
+button, mat-paginator, input, .mat-form-field, .mat-simple-snackbar {
+  font-family: NotoSansJPRegular!important;
+  //font-weight: 300!important;
+}
+
+tr.mat-row, tr.mat-footer-row {
+  height: 72px!important;
+}
+
+#color-picker-custom {
+  .mat-form-field-infix {
+    padding: 0!important;
+  }
+  input {
+    padding: .4375em 0!important;
+  }
+}

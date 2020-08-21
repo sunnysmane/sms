@@ -1,0 +1,25 @@
+<h1 mat-dialog-title>Filter</h1>
+<div mat-dialog-content>
+  <form [formGroup]="filterForm" autocomplete="off" novalidate>
+    <table class="full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="full-width">
+        <mat-label>Start Date</mat-label>
+        <input matInput [matDatepicker]="start_date" formControlName="start_date" id="start_date" placeholder="10/02/2020">
+        <mat-datepicker-toggle matSuffix [for]="start_date"></mat-datepicker-toggle>
+        <mat-datepicker #start_date></mat-datepicker>
+        <mat-error *ngIf="hasError('start_date', 'required')">Start Date is required</mat-error>
+      </mat-form-field></td>
+      <td><mat-form-field class="full-width">
+        <mat-label>End Date</mat-label>
+        <input matInput [matDatepicker]="end_date" formControlName="end_date" id="end_date" placeholder="12/02/2020">
+        <mat-datepicker-toggle matSuffix [for]="end_date"></mat-datepicker-toggle>
+        <mat-datepicker #end_date></mat-datepicker>
+        <mat-error *ngIf="hasError('end_date', 'required')">End Date is required</mat-error>
+      </mat-form-field></td>
+    </tr></table>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button color="primary" [disabled]="filterForm.invalid" [mat-dialog-close]="filterForm.value" cdkFocusInitial>Submit</button>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+</div>
