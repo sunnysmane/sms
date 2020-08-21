@@ -11,10 +11,10 @@ docker-compose up
 This will run the backend, frontend and database containers.
 
 Now Goto browser and open below link
-```
+
 [http://0.0.0.0:40000](http://0.0.0.0:40000)
-```
-##Technologies Used
+
+## Technologies Used
 * Backend
   * NodeJS
   * Hapi
