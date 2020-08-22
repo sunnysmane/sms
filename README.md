@@ -5,6 +5,8 @@
 2. Install docker compose if not installed as instructed on link https://docs.docker.com/compose/install/
 
 ## Run Application
+
+1. With Docker Compose
 ```
 docker-compose up
 ```
@@ -13,6 +15,15 @@ This will run the backend, frontend and database containers.
 Now Goto browser and open below link
 
 [http://0.0.0.0:40000](http://0.0.0.0:40000)
+
+2. Without Docker Compose (Running Individually)
+```
+cd backend/
+export NODE_ENV=env-local
+
+cd ../frontend/
+ng serve
+```
 
 ## Technologies Used
 * Backend
