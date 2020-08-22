@@ -13,7 +13,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatSortModule} from '@angular/material/sort';
-import {CityComponent, ConfirmationDialogComponent, FilterDialogComponent} from './components/city/city.component';
+import {CityComponent} from './components/city/city.component';
 import { CityDetailComponent } from './components/city-detail/city-detail.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
@@ -22,6 +22,8 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatChipsModule} from '@angular/material/chips';
 import {ColorPickerModule} from 'ngx-color-picker';
+import {ConfirmationDialogComponent} from './components/confirmation-dialog/confirmation-dialog.component';
+import {FilterDialogComponent} from './components/filter-dialog/filter-dialog.component';
 
 @NgModule({
   declarations: [

@@ -1,5 +1,5 @@
 import {AfterViewInit, Component, Inject, OnInit, ViewChild} from '@angular/core';
-import {CityService} from './../../services/city.service';
+import {CityService} from '../../services/city.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
@@ -8,6 +8,8 @@ import {Router} from '@angular/router';
 import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from '@angular/material/dialog';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import * as moment from 'moment';
+import {FilterDialogComponent} from '../filter-dialog/filter-dialog.component';
+import {ConfirmationDialogComponent} from '../confirmation-dialog/confirmation-dialog.component';
 
 export interface CityData {
   city: string;
@@ -148,44 +150,5 @@ export class CityComponent implements OnInit, AfterViewInit{
   clear() {
     this.filter = undefined;
     this.getCityList(this.paginator);
-  }
-}
-
-@Component({
-  selector: 'app-confirmation-dialog',
-  templateUrl: 'confirmation-dialog.html',
-})
-export class ConfirmationDialogComponent {}
-
-@Component({
-  selector: 'app-filter-dialog',
-  templateUrl: 'filter-dialog.html',
-})
-export class FilterDialogComponent implements OnInit, AfterViewInit{
-  public filterForm: FormGroup;
-
-  constructor(public dialogRef: MatDialogRef<FilterDialogComponent>,
-              @Inject(MAT_DIALOG_DATA) public data: any) {
-  }
-
-  ngOnInit() {
-    this.filterForm = new FormGroup({
-      start_date: new FormControl(new Date(), [Validators.required]),
-      end_date: new FormControl(new Date(), [Validators.required])
-    });
-  }
-
-  ngAfterViewInit() {
-    if(this.data) {
-      this.filterForm.setValue(this.data);
-    }
-  }
-
-  public hasError = (controlName: string, errorName: string) => {
-    return this.filterForm.controls[controlName].hasError(errorName);
-  }
-
-  onNoClick(): void {
-    this.dialogRef.close();
   }
 }
