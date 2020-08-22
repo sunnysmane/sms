@@ -24,6 +24,9 @@ export NODE_ENV=env-local
 cd ../frontend/
 ng serve
 ```
+Now Goto browser and open below link
+
+[http://0.0.0.0:4200](http://0.0.0.0:4200)
 
 ## Technologies Used
 * Backend
